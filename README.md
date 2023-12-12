@@ -14,6 +14,7 @@
 | |<img width="150" src="https://avatars.githubusercontent.com/u/104717341?v=4" />| | | |
 | 손승아 | 이주희 | 김민준 | 김예린 | 김지안 |
 |  | [Doozuu](https://github.com/Doozuu) |  |  | |
+| 랜딩페이지 <br> 회원가입페이지 <br> 로그인페이지 <br> 메인페이지 <br> 마이페이지| 전체 회고 조회페이지 <br> 개별 회고 조회 페이지 <br> 회고 등록 페이지 <br> 댓글 등록 결과 팝업 |  | | |
 
 <br>
 
