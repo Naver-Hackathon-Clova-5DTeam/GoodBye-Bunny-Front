@@ -2,6 +2,7 @@
 interface ButtonType {
   text: string;
   isActive: boolean;
+  version?: string;
 }
 
 interface MaxWidthContainerProps {
@@ -16,4 +17,9 @@ interface CardType {
   title: string;
   content: string;
   keywords: string[];
+}
+
+interface TextAreaType {
+  setTitle: React.Dispatch<React.SetStateAction<string>>;
+  setContent: React.Dispatch<React.SetStateAction<string>>;
 }
