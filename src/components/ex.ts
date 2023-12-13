@@ -1,1 +1,5 @@
-// 폴더명을 페이지명으로 작성
+const EX = () => {
+  return;
+};
+
+export default EX;
