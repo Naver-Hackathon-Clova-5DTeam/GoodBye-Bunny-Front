@@ -12,8 +12,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        mainBlue: "#185ADB",
-        lightBlue: "#B1CCFF",
+        lightGray: "#E8E8E8",
+        deepGray: "#A0A4A8",
       },
       fontFamily: {
         bold: ["Cafe24Ssurround", "sans"],
