@@ -11,3 +11,9 @@ interface MaxWidthContainerProps {
 interface KeyWordType {
   text: string;
 }
+
+interface CardType {
+  title: string;
+  content: string;
+  keywords: string[];
+}
