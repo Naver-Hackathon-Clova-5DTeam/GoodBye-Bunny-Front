@@ -16,6 +16,7 @@ module.exports = {
         lightGray: "#E8E8E8",
         deepGray: "#A0A4A8",
         darkGray: "#3C3C43",
+        fontGray: "#666",
       },
       fontFamily: {
         bold: ["Cafe24Ssurround", "sans"],

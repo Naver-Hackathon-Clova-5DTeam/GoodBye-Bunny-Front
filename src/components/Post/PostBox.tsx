@@ -10,7 +10,7 @@ const PostBox = ({
   const date = updateTime && formatDate(updateTime);
   // 내가 작성한 회고는 로컬에서 프로필 가져오기
   return (
-    <div className="flex flex-col w-[90%] rounded-[24px] pl-4 pr-4 h-[75%] pb-4 mb-6">
+    <div className="flex flex-col w-[90%] rounded-[24px] pl-4 pr-4 h-[75%] pb-4">
       <div className="flex bg-whiteGray items-center rounded-tl-[24px] rounded-tr-[24px] pl-[16px] pr-[16px] pb-[16px] pt-[16px]">
         <img src={profile} className="w-[40px] h-[40px] rounded-[100%] mr-3" />
         <div>
@@ -19,8 +19,8 @@ const PostBox = ({
         </div>
       </div>
       <div className="flex flex-col bg-white rounded-bl-[24px] rounded-br-[24px] pl-4 pr-4 pb-4 pt-4">
-        <h1 className="font-bold text-mdTitle">{title}</h1>
-        {content}
+        <h1 className="font-bold text-mdTitle mb-[14px]">{title}</h1>
+        <p className="font-regular text-fontGray">{content}</p>
       </div>
     </div>
   );
