@@ -1,9 +1,29 @@
 import cardImg from "../../assets/common/ex.png";
 import KeyWord from "./KeyWord";
+import { useNavigate } from "react-router-dom";
 
-export default function Card({ title, content, keywords }: CardType) {
+export default function Card({
+  nickname,
+  profile,
+  title,
+  content,
+  keywords,
+  reviewId,
+  updateTime,
+}: CardType) {
+  const nav = useNavigate();
+
+  const NavigateAndSaveData = () => {
+    const info = { nickname, profile, title, content, reviewId, updateTime };
+    localStorage.setItem("info", JSON.stringify(info));
+    nav(`/post/${reviewId}`);
+  };
+
   return (
-    <div className="max-w-[357px] rounded-[24px] cursor-pointer max-h-[354px] w-[90%]">
+    <div
+      className="max-w-[357px] rounded-[24px] cursor-pointer max-h-[354px] w-[90%]"
+      onClick={NavigateAndSaveData}
+    >
       <div className="relative">
         <div className="flex flex-wrap gap-2 justify-end absolute mt-4 right-4">
           {keywords && keywords.map((k) => <KeyWord text={k} />)}

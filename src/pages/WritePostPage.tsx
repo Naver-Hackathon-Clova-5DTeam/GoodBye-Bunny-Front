@@ -1,6 +1,6 @@
 import Header from "../components/common/Header";
 import Button from "../components/common/Button";
-import TextArea from "../components/Write/TextArea";
+import TextArea from "../components/WritePost/TextArea";
 import { useState } from "react";
 
 const WritePage = () => {

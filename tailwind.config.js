@@ -22,6 +22,7 @@ module.exports = {
       },
       fontSize: {
         lgTitle: "28px",
+        mdTitle: "24px",
         smTitle: "21px",
         md: "18px",
         p: "16px",

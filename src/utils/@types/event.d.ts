@@ -14,12 +14,26 @@ interface KeyWordType {
 }
 
 interface CardType {
+  nickname: string;
+  profile: string;
   title: string;
   content: string;
-  keywords: string[];
+  reviewId?: number;
+  updateTime?: string;
+  keywords?: string[];
 }
 
 interface TextAreaType {
   setTitle: React.Dispatch<React.SetStateAction<string>>;
   setContent: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface PostType {
+  title: string;
+  content: string;
+  updateTime: string;
+}
+
+interface DateType {
+  date: string;
 }
