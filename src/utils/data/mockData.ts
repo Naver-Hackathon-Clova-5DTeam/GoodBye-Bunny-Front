@@ -32,6 +32,57 @@ export const recommendData = [
   },
 ];
 
+export const CommentData = [
+  {
+    commentId: 1,
+    profile:
+      "https://cdn.pixabay.com/photo/2023/11/11/04/03/christmas-8380345_1280.png",
+    commentContent: "우왕 멋져요",
+    updateTime: "2023-12-14T01:16:52.726084",
+    memberNickname: "min95913",
+  },
+  {
+    commentId: 2,
+    profile:
+      "https://cdn.pixabay.com/photo/2023/11/11/04/03/christmas-8380345_1280.png",
+    commentContent: "여행 가고 싶다",
+    updateTime: "2023-12-14T01:19:59.335528",
+    memberNickname: "min95913sdfsds",
+  },
+  {
+    commentId: 52,
+    profile:
+      "https://cdn.pixabay.com/photo/2023/11/11/04/03/christmas-8380345_1280.png",
+    commentContent: "저도 열심히 살아야겠어요!",
+    updateTime: "2023-12-14T15:42:27.520062",
+    memberNickname: "min95913sdfsds",
+  },
+  {
+    commentId: 1,
+    profile:
+      "https://cdn.pixabay.com/photo/2023/11/11/04/03/christmas-8380345_1280.png",
+    commentContent: "우왕 멋져요",
+    updateTime: "2023-12-14T01:16:52.726084",
+    memberNickname: "min95913",
+  },
+  {
+    commentId: 2,
+    profile:
+      "https://cdn.pixabay.com/photo/2023/11/11/04/03/christmas-8380345_1280.png",
+    commentContent: "여행 가고 싶다",
+    updateTime: "2023-12-14T01:19:59.335528",
+    memberNickname: "min95913sdfsds",
+  },
+  {
+    commentId: 52,
+    profile:
+      "https://cdn.pixabay.com/photo/2023/11/11/04/03/christmas-8380345_1280.png",
+    commentContent: "저도 열심히 살아야겠어요!",
+    updateTime: "2023-12-14T15:42:27.520062",
+    memberNickname: "min95913sdfsds",
+  },
+];
+
 export const myPostData = [
   {
     memberNickname: "체크",

@@ -31,7 +31,7 @@ export default function Card({
         <img src={cardImg} className="rounded-tl-[24px] rounded-tr-[24px]" />
         <div className="bg-white pb-5 pl-7 pr-7 pt-4 rounded-bl-[24px] rounded-br-[24px] mt-[-1px]">
           <h1 className="font-bold text-smTitle ">{title}</h1>
-          <p className="text-p font-regular">{content}</p>
+          <p className="text-p font-regular">{content.slice(0, 50)}...</p>
         </div>
       </div>
     </div>

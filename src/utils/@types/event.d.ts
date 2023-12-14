@@ -13,6 +13,18 @@ interface KeyWordType {
   text: string;
 }
 
+interface CommentType {
+  profile: string;
+  commentId?: number;
+  commentContent: string;
+  updateTime: string;
+  memberNickname: string;
+}
+
+interface CommentBoxProps {
+  comments: CommentData[];
+}
+
 interface CardType {
   nickname: string;
   profile: string;
@@ -21,6 +33,7 @@ interface CardType {
   reviewId?: number;
   updateTime?: string;
   keywords?: string[];
+  comments?: CommentType[];
 }
 
 interface TextAreaType {

@@ -28,7 +28,9 @@ module.exports = {
         smTitle: "21px",
         md: "18px",
         p: "16px",
+        s: "14px",
         sm: "12px",
+        xs: "10px",
       },
       keyframes: {
         customShake: {
