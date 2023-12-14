@@ -5,6 +5,8 @@ import sendIcon from "../../assets/post/send.png";
 
 const CommentBox = ({ comments }: CommentBoxProps) => {
   const [commentText, setCommentText] = useState("");
+  const path = window.location.pathname;
+  const isMine = path === "/mypost";
   // 댓글 작성 프로필 = 사용자 프로필 (로컬에서 가져오기)
 
   const handleTextareaInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -23,23 +25,27 @@ const CommentBox = ({ comments }: CommentBoxProps) => {
           memberNickname={c.memberNickname}
         />
       ))}
-      <div className="w-[100%] h-[1px] bg-lightGray mt-[14px] mb-[14px]"></div>
-      <div className="flex items-center gap-2 relative ">
-        <img src={profile} className="w-[30px]" />
-        <textarea
-          className="bg-lightGray rounded-[20px] w-[100%] text-s flex p-2 pl-4 pr-10 outline-none"
-          onChange={(e) => setCommentText(e.target.value)}
-          placeholder="댓글을 작성해주세요."
-          value={commentText}
-          rows={1} // 초기 높이를 1로 설정
-          onInput={handleTextareaInput}
-          style={{ height: "auto", minHeight: "40px", resize: "none" }}
-        />
-        <img
-          src={sendIcon}
-          className="w-[21px] absolute right-3 cursor-pointer"
-        />
-      </div>
+      {!isMine && (
+        <>
+          <div className="w-[100%] h-[1px] bg-lightGray mt-[14px] mb-[14px]"></div>
+          <div className="flex items-center gap-2 relative ">
+            <img src={profile} className="w-[30px]" />
+            <textarea
+              className="bg-lightGray rounded-[20px] w-[100%] text-s flex p-2 pl-4 pr-10 outline-none"
+              onChange={(e) => setCommentText(e.target.value)}
+              placeholder="댓글을 작성해주세요."
+              value={commentText}
+              rows={1}
+              onInput={handleTextareaInput}
+              style={{ height: "auto", minHeight: "40px", resize: "none" }}
+            />
+            <img
+              src={sendIcon}
+              className="w-[21px] absolute right-3 cursor-pointer"
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 };

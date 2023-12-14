@@ -1,5 +1,6 @@
 import { formatDate } from "../../utils/formatDate";
 import CommentBox from "./CommentBox";
+import editIcon from "../../assets/post/edit.png";
 
 const PostBox = ({
   profile,
@@ -10,6 +11,8 @@ const PostBox = ({
   comments,
 }: CardType) => {
   const date = updateTime && formatDate(updateTime);
+  const path = window.location.pathname;
+  const isMine = path === "/mypost";
 
   // 내가 작성한 회고는 로컬에서 프로필 가져오기
   return (
@@ -20,6 +23,12 @@ const PostBox = ({
           <p>{nickname}님의 회고</p>
           <p className="text-deepGray text-sm">{date}</p>
         </div>
+        {isMine && (
+          <img
+            src={editIcon}
+            className="w-[24px] ml-auto mr-1 cursor-pointer"
+          />
+        )}
       </div>
       <div className="flex flex-col bg-white pl-4 pr-4 pb-9 pt-4">
         <h1 className="font-bold text-mdTitle mb-[14px]">{title}</h1>

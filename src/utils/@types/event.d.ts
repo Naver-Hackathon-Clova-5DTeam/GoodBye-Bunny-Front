@@ -3,6 +3,7 @@ interface ButtonType {
   text: string;
   isActive: boolean;
   version?: string;
+  func?: function;
 }
 
 interface MaxWidthContainerProps {
