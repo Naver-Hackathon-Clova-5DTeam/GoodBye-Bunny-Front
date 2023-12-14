@@ -3,6 +3,7 @@ interface ButtonType {
   text: string;
   isActive: boolean;
   version?: string;
+  func?: function;
 }
 
 interface MaxWidthContainerProps {
@@ -13,13 +14,40 @@ interface KeyWordType {
   text: string;
 }
 
+interface CommentType {
+  profile: string;
+  commentId?: number;
+  commentContent: string;
+  updateTime: string;
+  memberNickname: string;
+}
+
+interface CommentBoxProps {
+  comments: CommentData[];
+}
+
 interface CardType {
+  nickname: string;
+  profile: string;
   title: string;
   content: string;
-  keywords: string[];
+  reviewId?: number;
+  updateTime?: string;
+  keywords?: string[];
+  comments?: CommentType[];
 }
 
 interface TextAreaType {
   setTitle: React.Dispatch<React.SetStateAction<string>>;
   setContent: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface PostType {
+  title: string;
+  content: string;
+  updateTime: string;
+}
+
+interface DateType {
+  date: string;
 }

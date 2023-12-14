@@ -12,9 +12,12 @@ module.exports = {
     },
     extend: {
       colors: {
+        whiteGray: "#F8F8F8",
         lightGray: "#E8E8E8",
         deepGray: "#A0A4A8",
         darkGray: "#3C3C43",
+        fontGray: "#666",
+        pointRed: "#E93C3C",
       },
       fontFamily: {
         bold: ["Cafe24Ssurround", "sans"],
@@ -22,10 +25,13 @@ module.exports = {
       },
       fontSize: {
         lgTitle: "28px",
+        mdTitle: "24px",
         smTitle: "21px",
         md: "18px",
         p: "16px",
+        s: "14px",
         sm: "12px",
+        xs: "10px",
       },
       keyframes: {
         customShake: {

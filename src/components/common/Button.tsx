@@ -1,4 +1,4 @@
-const Button = ({ text, isActive, version }: ButtonType) => {
+const Button = ({ text, isActive, version, func }: ButtonType) => {
   return (
     <button
       className={`font-bold text-md ${
@@ -9,6 +9,7 @@ const Button = ({ text, isActive, version }: ButtonType) => {
           : "bg-lightGray text-deepGray "
       } w-[90%] h-[65px] rounded-[19px]`}
       disabled={!isActive}
+      onClick={func}
     >
       {text}
     </button>
