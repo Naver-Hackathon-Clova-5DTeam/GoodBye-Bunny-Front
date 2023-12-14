@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         lightGray: "#E8E8E8",
         deepGray: "#A0A4A8",
+        darkGray: "#3C3C43",
       },
       fontFamily: {
         bold: ["Cafe24Ssurround", "sans"],
@@ -21,7 +22,7 @@ module.exports = {
       },
       fontSize: {
         lgTitle: "28px",
-        smTitle: "20px",
+        smTitle: "21px",
         md: "18px",
         p: "16px",
         sm: "12px",
