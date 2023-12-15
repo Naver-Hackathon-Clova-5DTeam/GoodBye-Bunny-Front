@@ -3,6 +3,7 @@ import CommentBox from "./CommentBox";
 import editIcon from "../../assets/post/edit.png";
 import { useState, ChangeEvent, useEffect, useRef } from "react";
 import { patchReview } from "../../api/review";
+import PointModal from "../PointModal/pointModal";
 
 const PostBox = ({
   profile,
@@ -20,6 +21,7 @@ const PostBox = ({
   const path = window.location.pathname;
   const isMine = path === "/mypost";
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const [isPost, setIsPost] = useState(false);
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -59,54 +61,65 @@ const PostBox = ({
 
   // 내가 작성한 회고는 로컬에서 프로필 가져오기
   return (
-    <div className="flex flex-col w-[100%] rounded-[24px] pl-4 pr-4 pb-4">
-      <div className="flex bg-whiteGray items-center rounded-tl-[24px] rounded-tr-[24px] pl-[16px] pr-[16px] pb-[16px] pt-[16px]">
-        <img src={profile} className="w-[40px] h-[40px] rounded-[100%] mr-3" />
-        <div>
-          <p>{nickname}님의 회고</p>
-          <p className="text-deepGray text-sm">{date}</p>
+    <>
+      {isPost && (
+        <div className="relative w-[100%] pl-4 pr-4">
+          <PointModal />
+          <div className="fixed z-10 bg-black w-[100%] h-[100vh] opacity-25 top-0 left-0"></div>
         </div>
-        {isMine && (
+      )}
+      <div className="flex flex-col w-[100%] rounded-[24px] pl-4 pr-4 pb-4">
+        <div className="flex bg-whiteGray items-center rounded-tl-[24px] rounded-tr-[24px] pl-[16px] pr-[16px] pb-[16px] pt-[16px]">
           <img
-            src={editIcon}
-            className="w-[24px] ml-auto mr-1 cursor-pointer"
-            onClick={editPost}
+            src={profile}
+            className="w-[40px] h-[40px] rounded-[100%] mr-3"
           />
-        )}
-      </div>
-      <div className="flex flex-col bg-white pl-4 pr-4 pb-9 pt-4">
-        {isEdit ? (
-          <>
-            <input
-              className="font-bold text-mdTitle mb-[14px]"
-              value={newTitle}
-              onChange={handleInput}
+          <div>
+            <p>{nickname}님의 회고</p>
+            <p className="text-deepGray text-sm">{date}</p>
+          </div>
+          {isMine && (
+            <img
+              src={editIcon}
+              className="w-[24px] ml-auto mr-1 cursor-pointer"
+              onClick={editPost}
             />
-            <textarea
-              autoFocus
-              ref={textareaRef}
-              value={newContent}
-              className="font-regular text-fontGray"
-              onChange={handleTextareaInput}
-              style={{ height: "auto", resize: "none", minHeight: minHeight }}
-            />
-            <button
-              className="bg-black w-[5rem] rounded-[10px] text-white font-regular pt-1 pb-1 ml-auto mt-3"
-              onClick={patchPost}
-            >
-              수정 완료
-            </button>
-          </>
-        ) : (
-          <>
-            <h1 className="font-bold text-mdTitle mb-[14px]">{title}</h1>
-            <p className="font-regular text-fontGray">{content}</p>
-          </>
-        )}
+          )}
+        </div>
+        <div className="flex flex-col bg-white pl-4 pr-4 pb-9 pt-4">
+          {isEdit ? (
+            <>
+              <input
+                className="font-bold text-mdTitle mb-[14px]"
+                value={newTitle}
+                onChange={handleInput}
+              />
+              <textarea
+                autoFocus
+                ref={textareaRef}
+                value={newContent}
+                className="font-regular text-fontGray"
+                onChange={handleTextareaInput}
+                style={{ height: "auto", resize: "none", minHeight: minHeight }}
+              />
+              <button
+                className="bg-black w-[5rem] rounded-[10px] text-white font-regular pt-1 pb-1 ml-auto mt-3"
+                onClick={patchPost}
+              >
+                수정 완료
+              </button>
+            </>
+          ) : (
+            <>
+              <h1 className="font-bold text-mdTitle mb-[14px]">{title}</h1>
+              <p className="font-regular text-fontGray">{content}</p>
+            </>
+          )}
+        </div>
+        <div className="w-[100%] h-[1px] bg-lightGray"></div>
+        {comments && <CommentBox comments={comments} setIsPost={setIsPost} />}
       </div>
-      <div className="w-[100%] h-[1px] bg-lightGray"></div>
-      {comments && <CommentBox comments={comments} />}
-    </div>
+    </>
   );
 };
 

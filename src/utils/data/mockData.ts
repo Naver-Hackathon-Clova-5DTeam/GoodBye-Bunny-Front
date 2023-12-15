@@ -8,7 +8,7 @@ export const recommendData = [
       "올해는 국내 여행을 많이 다녔다. 특히 강릉이랑 여수에서의 여행이 기억에 남는다. 바다도 보고 한적한 카페에서 힐링했던 경험이 좋은 추억으로 남은 것 같아 내년 초에도 다시 가고 싶다. 그리고 개발 동아리에 처음 들어가 본격적으로 개발 공부를 시작하고, 처음으로 코테도 봤다. 점점 배워야 할 게 더 많아지는 것 같아 막막하기도 하지만, 꾸준히 하면 잘 될거라고 믿고 마음을 편하게 먹어야겠다고 다짐했다. 공모전에 다양하게 참가하면서 여러 사람들을 만나 배운 점이 많다.",
     reviewId: 0,
     updateTime: "2023-12-13T21:27:58.613077",
-    keywords: ["키워드1", "키워드2", "키워드3"],
+    keywords: ["학업", "여행", "업무"],
   },
   {
     memberNickname: "체크1",
@@ -18,7 +18,7 @@ export const recommendData = [
     content: "asdfasdfsad",
     reviewId: 1,
     updateTime: "2023-12-13T21:27:58.613077",
-    keywords: ["키워드1", "키워드2", "키워드3"],
+    keywords: ["직장", "가족", "친구"],
   },
   {
     memberNickname: "체크2",
@@ -28,7 +28,7 @@ export const recommendData = [
     content: "asdfasdfsad",
     reviewId: 2,
     updateTime: "2023-12-13T21:27:58.613077",
-    keywords: ["키워드1", "키워드2", "키워드3"],
+    keywords: ["취미", "건강", "키워드3"],
   },
 ];
 

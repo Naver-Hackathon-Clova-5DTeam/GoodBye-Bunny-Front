@@ -19,6 +19,12 @@ module.exports = {
         fontGray: "#666",
         pointRed: "#E93C3C",
         gray: "#52575C",
+        kGreen: "#1AB759",
+        kYellow: "#F6A609",
+        kOrange: "#F5860A",
+        kPink: "#F57F7A",
+        kPurple: "#D174F5",
+        kBlue: "#0A8BF5",
       },
       fontFamily: {
         bold: ["Cafe24Ssurround", "sans"],
