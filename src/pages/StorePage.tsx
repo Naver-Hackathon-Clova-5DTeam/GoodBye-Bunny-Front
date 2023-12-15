@@ -25,7 +25,10 @@ const StorePage = () => {
       </div>
 
       <PurchaseWindow />
-      <img src={bg} className="absolute top-[-15rem] z-[-10] w-[100%]" />
+      <img
+        src={bg}
+        className="absolute top-[-15rem] z-[-10] w-[100%] h-screen"
+      />
     </div>
   );
 };

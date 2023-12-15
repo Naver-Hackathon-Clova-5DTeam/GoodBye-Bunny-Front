@@ -27,6 +27,8 @@ module.exports = {
         kPurple: "#D174F5",
         kBlue: "#0A8BF5",
         pointGreen: "#017219",
+        mainBlue: "#1A57CB",
+        subBlue: "#277FFF",
       },
       fontFamily: {
         bold: ["Cafe24Ssurround", "sans"],
@@ -35,7 +37,7 @@ module.exports = {
       fontSize: {
         lgTitle: "28px",
         mdTitle: "24px",
-        smTitle: "21px",
+        smTitle: "20px",
         md: "18px",
         p: "16px",
         s: "14px",

@@ -8,7 +8,12 @@ const NavBar = () => {
   const nav = useNavigate();
 
   return (
-    <div className="flex gap-[8%] items-center bg-white w-[100%] max-w-[480px] justify-center h-[6rem] rounded-tr-[14px] rounded-tl-[14px] fixed bottom-0 pb-3">
+    <div
+      className="flex gap-[8%] items-center bg-white w-[100%] max-w-[480px] justify-center h-[6rem] rounded-tr-[14px] rounded-tl-[14px] fixed bottom-0 pb-3"
+      style={{
+        boxShadow: "1.884px -4.71px 14.13px 0px rgba(85, 94, 88, 0.09)",
+      }}
+    >
       <div
         className="flex flex-col items-center cursor-pointer w-[3rem]"
         onClick={() => nav("/")}

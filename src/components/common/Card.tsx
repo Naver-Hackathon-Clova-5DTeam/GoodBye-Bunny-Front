@@ -11,6 +11,7 @@ export default function Card({
   keywords,
   reviewId,
   updateTime,
+  isMine,
 }: CardType) {
   const nav = useNavigate();
   const date = updateTime && formatDate({ updateTime, isTime: true });
@@ -21,10 +22,14 @@ export default function Card({
     nav(`/post/${reviewId}`);
   };
 
+  const NaivagteMyPost = () => {
+    nav("/mypost");
+  };
+
   return (
     <div
       className="max-w-[357px] rounded-[24px] cursor-pointer max-h-[354px] w-[90%]"
-      onClick={NavigateAndSaveData}
+      onClick={isMine ? NaivagteMyPost : NavigateAndSaveData}
     >
       <div className="relative">
         <img

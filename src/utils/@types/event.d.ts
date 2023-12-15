@@ -36,6 +36,7 @@ interface CardType {
   updateTime?: string;
   keywords?: string[];
   comments?: CommentType[];
+  isMine?: boolean;
 }
 
 interface TextAreaType {
