@@ -29,13 +29,13 @@ const PostPage = () => {
     // 회고 조회
     const info = localStorage.getItem("info");
     info && setData(JSON.parse(info));
-    // 댓글 조회
-    getComments();
+    // 댓글 조회 mockData 대체하기!
+    // getComments();
   }, []);
 
   return (
     <>
-      {data && comments && (
+      {data && CommentData && (
         <>
           <Header text={`${data?.nickname}님이 작성한 회고`} />
           <div className="bg-black h-[100vh] flex flex-col items-center ">
@@ -45,7 +45,7 @@ const PostPage = () => {
               content={data.content}
               nickname={data.nickname}
               updateTime={data.updateTime}
-              comments={comments}
+              comments={CommentData}
             />
           </div>
         </>

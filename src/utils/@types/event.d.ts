@@ -59,6 +59,11 @@ interface ReviewType {
   review_id?: number;
 }
 
+interface CommentGetType {
+  review_id: number;
+}
+
 interface CommentPostType {
   review_id: number;
+  commentContent: string;
 }
