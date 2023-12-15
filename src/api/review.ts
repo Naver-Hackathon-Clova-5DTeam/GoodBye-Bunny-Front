@@ -47,3 +47,13 @@ export const getMyReview = async () => {
     throw err;
   }
 };
+
+// id 필요한지 확인
+export const getRecommends = async () => {
+  try {
+    const res = await client.get(`/review/recommend`);
+    return res;
+  } catch (err) {
+    throw err;
+  }
+};
