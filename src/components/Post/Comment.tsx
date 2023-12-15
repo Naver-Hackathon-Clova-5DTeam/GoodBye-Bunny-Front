@@ -6,7 +6,7 @@ const Comment = ({
   updateTime,
   commentContent,
 }: CommentType) => {
-  const date = updateTime && formatDate(updateTime);
+  const date = updateTime && formatDate({ updateTime });
 
   return (
     <div className="pt-[14px]">

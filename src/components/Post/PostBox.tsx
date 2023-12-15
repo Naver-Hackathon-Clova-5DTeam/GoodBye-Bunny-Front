@@ -14,7 +14,7 @@ const PostBox = ({
   const [newContent, setNewContent] = useState(content);
   const [isEdit, setIsEdit] = useState(false);
   const [minHeight, setMinHeight] = useState("auto");
-  const date = updateTime && formatDate(updateTime);
+  const date = updateTime && formatDate({ updateTime });
   const path = window.location.pathname;
   const isMine = path === "/mypost";
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);

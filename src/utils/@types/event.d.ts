@@ -49,5 +49,6 @@ interface PostType {
 }
 
 interface DateType {
-  date: string;
+  updateTime: string;
+  isTime?: boolean;
 }
