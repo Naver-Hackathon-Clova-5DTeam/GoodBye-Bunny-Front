@@ -8,3 +8,12 @@ export const postReview = async ({ title, content }: ReviewType) => {
     throw err;
   }
 };
+
+export const getComment = async ({ review_id }: CommentPostType) => {
+  try {
+    const res = await client.get(`/review/${review_id}/comment`);
+    return res;
+  } catch (err) {
+    throw err;
+  }
+};

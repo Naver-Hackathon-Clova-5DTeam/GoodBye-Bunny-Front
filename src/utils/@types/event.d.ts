@@ -57,3 +57,7 @@ interface ReviewType {
   title: string;
   content: string;
 }
+
+interface CommentPostType {
+  review_id: number;
+}
