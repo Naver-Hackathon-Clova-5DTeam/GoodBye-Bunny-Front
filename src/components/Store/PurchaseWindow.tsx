@@ -39,7 +39,7 @@ const PurchaseWindow = () => {
       <div className="flex mt-4 mb-4">
         <StoreButton
           text="크리스마스 옷"
-          isActive={true}
+          isActive={!category}
           func={() => {
             setCategory(0);
             setSelected(-1);
@@ -47,7 +47,7 @@ const PurchaseWindow = () => {
         />
         <StoreButton
           text="배경"
-          isActive={false}
+          isActive={!!category}
           func={() => {
             setCategory(1);
             setSelected(-1);
