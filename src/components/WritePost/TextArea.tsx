@@ -17,7 +17,7 @@ const TextArea = ({ setContent, setTitle }: TextAreaType) => {
         className=" font-regular text-p outline-none h-[80%]"
         onChange={(e) => setContent(e.target.value)}
       />
-      {isOpen && <GuideModal />}
+      {isOpen && <GuideModal isOpen={isOpen} />}
       <img
         src={guideIcon}
         className="w-[4rem] ml-auto "
