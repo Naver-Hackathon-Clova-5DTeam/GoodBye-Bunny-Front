@@ -52,3 +52,8 @@ interface DateType {
   updateTime: string;
   isTime?: boolean;
 }
+
+interface ReviewType {
+  title: string;
+  content: string;
+}
