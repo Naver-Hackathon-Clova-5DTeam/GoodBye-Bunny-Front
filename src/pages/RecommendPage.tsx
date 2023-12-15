@@ -2,10 +2,28 @@ import NavBar from "../components/common/NavBar";
 import Card from "../components/common/Card";
 import Header from "../components/common/Header";
 import { recommendData } from "../utils/data/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getRecommends } from "../api/review";
 
 const RecommendPage = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState<CardType[]>();
+
+  // mockData 대체하기
+
+  const getRecommendData = async () => {
+    try {
+      const res = await getRecommends();
+      console.log(res);
+      setData(res.data);
+    } catch (err) {
+      console.log(err);
+      alert("예기치 못한 에러가 발생했습니다.");
+    }
+  };
+
+  // useEffect(() => {
+  //   getRecommendData();
+  // }, []);
 
   return (
     <>

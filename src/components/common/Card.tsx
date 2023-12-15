@@ -1,6 +1,7 @@
-import cardImg from "../../assets/common/ex.png";
+import { formatDate } from "../../utils/formatDate";
 import KeyWord from "./KeyWord";
 import { useNavigate } from "react-router-dom";
+import { randomCardPicker } from "../../utils/randomCardPicker";
 
 export default function Card({
   nickname,
@@ -12,6 +13,7 @@ export default function Card({
   updateTime,
 }: CardType) {
   const nav = useNavigate();
+  const date = updateTime && formatDate({ updateTime, isTime: true });
 
   const NavigateAndSaveData = () => {
     const info = { nickname, profile, title, content, reviewId, updateTime };
@@ -25,13 +27,19 @@ export default function Card({
       onClick={NavigateAndSaveData}
     >
       <div className="relative">
-        <div className="flex flex-wrap gap-2 justify-end absolute mt-4 right-4">
-          {keywords && keywords.map((k) => <KeyWord text={k} />)}
-        </div>
-        <img src={cardImg} className="rounded-tl-[24px] rounded-tr-[24px]" />
+        <img
+          src={randomCardPicker()}
+          className="rounded-tl-[24px] rounded-tr-[24px]"
+        />
         <div className="bg-white pb-5 pl-7 pr-7 pt-4 rounded-bl-[24px] rounded-br-[24px] mt-[-1px]">
+          <p className="text-sm text-gray mb-1">{`${nickname} | ${date}`}</p>
           <h1 className="font-bold text-smTitle ">{title}</h1>
-          <p className="text-p font-regular">{content.slice(0, 50)}...</p>
+          <p className="text-p font-regular text-gray">
+            {content.slice(0, 25)}...
+          </p>
+          <div className="flex flex-wrap gap-2  mt-1 ">
+            {keywords && keywords.map((k) => <KeyWord text={k} />)}
+          </div>
         </div>
       </div>
     </div>

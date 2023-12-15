@@ -3,12 +3,15 @@ import Comment from "./Comment";
 import profile from "../../assets/post/profile.png";
 import sendIcon from "../../assets/post/send.png";
 import PointModal from "../PointModal/pointModal";
+import { postComment } from "../../api/review";
+import { useParams } from "react-router-dom";
 
 const CommentBox = ({ comments }: CommentBoxProps) => {
-  const [commentText, setCommentText] = useState("");
+  const [commentContent, setCommentContent] = useState("");
   const [isPost, setIsPost] = useState(false);
   const path = window.location.pathname;
   const isMine = path === "/mypost";
+  const { reviewId } = useParams<{ reviewId?: string }>();
   // 댓글 작성 프로필 = 사용자 프로필 (로컬에서 가져오기)
 
   const handleTextareaInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -16,11 +19,19 @@ const CommentBox = ({ comments }: CommentBoxProps) => {
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
-  const postComment = () => {
-    if (!commentText.length) {
+  const postComments = async () => {
+    if (!commentContent.length) {
       alert("코멘트를 작성해주세요!");
     } else {
-      setIsPost(true);
+      try {
+        const review_id = Number(reviewId);
+        const res = await postComment({ review_id, commentContent });
+        console.log(res);
+        setIsPost(true);
+      } catch (err) {
+        console.log(err);
+        alert("예기치 못한 에러가 발생했습니다.");
+      }
     }
   };
 
@@ -49,9 +60,9 @@ const CommentBox = ({ comments }: CommentBoxProps) => {
               <img src={profile} className="w-[30px]" />
               <textarea
                 className="bg-lightGray rounded-[20px] w-[100%] text-s flex p-2 pl-4 pr-10 outline-none"
-                onChange={(e) => setCommentText(e.target.value)}
+                onChange={(e) => setCommentContent(e.target.value)}
                 placeholder="댓글을 작성해주세요."
-                value={commentText}
+                value={commentContent}
                 rows={1}
                 onInput={handleTextareaInput}
                 style={{ height: "auto", minHeight: "40px", resize: "none" }}
@@ -59,7 +70,7 @@ const CommentBox = ({ comments }: CommentBoxProps) => {
               <img
                 src={sendIcon}
                 className="w-[21px] absolute right-3 cursor-pointer"
-                onClick={postComment}
+                onClick={postComments}
               />
             </div>
           </>

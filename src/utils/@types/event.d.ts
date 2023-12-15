@@ -28,7 +28,7 @@ interface CommentBoxProps {
 
 interface CardType {
   nickname: string;
-  profile: string;
+  profile?: string;
   title: string;
   content: string;
   reviewId?: number;
@@ -49,5 +49,21 @@ interface PostType {
 }
 
 interface DateType {
-  date: string;
+  updateTime: string;
+  isTime?: boolean;
+}
+
+interface ReviewType {
+  title: string;
+  content: string;
+  review_id?: number;
+}
+
+interface CommentGetType {
+  review_id: number;
+}
+
+interface CommentPostType {
+  review_id: number;
+  commentContent: string;
 }
