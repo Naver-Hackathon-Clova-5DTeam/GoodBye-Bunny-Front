@@ -36,6 +36,7 @@ interface CardType {
   updateTime?: string;
   keywords?: string[];
   comments?: CommentType[];
+  isMine?: boolean;
 }
 
 interface TextAreaType {
@@ -67,4 +68,8 @@ interface CommentGetType {
 interface CommentPostType {
   review_id: number;
   commentContent: string;
+}
+
+interface RandomCardType {
+  isLong?: boolean;
 }
