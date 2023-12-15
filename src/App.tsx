@@ -4,6 +4,7 @@ import WritePage from "./pages/WritePostPage";
 import PostPage from "./pages/PostPage";
 import MyPostPage from "./pages/MyPostPage";
 import StorePage from "./pages/StorePage";
+import HistoryPage from "./pages/HistoryPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/post/:reviewId" element={<PostPage />} />
       <Route path="/mypost" element={<MyPostPage />} />
       <Route path="/store" element={<StorePage />} />
+      <Route path="/history" element={<HistoryPage />} />
     </Routes>
   );
 }

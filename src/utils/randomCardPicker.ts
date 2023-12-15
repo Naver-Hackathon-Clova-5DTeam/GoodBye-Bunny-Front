@@ -1,9 +1,15 @@
 import card1 from "../assets/common/card1.png";
 import card2 from "../assets/common/card2.png";
 import card3 from "../assets/common/card3.png";
+import profile1 from "../assets/history/profile1.png";
+import profile2 from "../assets/history/profile2.png";
+import profile3 from "../assets/history/profile3.png";
 
-export const randomCardPicker = () => {
+export const randomCardPicker = ({ isLong }: RandomCardType) => {
   const cardList = [card1, card2, card3];
+  const profileList = [profile1, profile2, profile3];
+
   const randomNum = Math.floor(Math.random() * 3);
-  return cardList[randomNum];
+
+  return isLong ? profileList[randomNum] : cardList[randomNum];
 };

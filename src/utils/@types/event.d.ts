@@ -68,3 +68,7 @@ interface CommentPostType {
   review_id: number;
   commentContent: string;
 }
+
+interface RandomCardType {
+  isLong?: boolean;
+}

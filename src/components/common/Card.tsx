@@ -28,7 +28,7 @@ export default function Card({
     >
       <div className="relative">
         <img
-          src={randomCardPicker()}
+          src={randomCardPicker({ isLong: false })}
           className="rounded-tl-[24px] rounded-tr-[24px]"
         />
         <div className="bg-white pb-5 pl-7 pr-7 pt-4 rounded-bl-[24px] rounded-br-[24px] mt-[-1px]">
