@@ -38,7 +38,7 @@ const PostPage = () => {
       {data && CommentData && (
         <>
           <Header text={`${data?.nickname}님이 작성한 회고`} />
-          <div className="bg-black h-[100vh] flex flex-col items-center ">
+          <div className="bg-black h-[100vh] w-[100%] flex flex-col items-center ">
             <PostBox
               profile={data.profile}
               title={data.title}

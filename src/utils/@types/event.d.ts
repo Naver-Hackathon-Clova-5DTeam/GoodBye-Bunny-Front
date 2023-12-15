@@ -24,6 +24,7 @@ interface CommentType {
 
 interface CommentBoxProps {
   comments: CommentData[];
+  setIsPost: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface CardType {

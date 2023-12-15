@@ -2,13 +2,12 @@ import { useState, ChangeEvent } from "react";
 import Comment from "./Comment";
 import profile from "../../assets/post/profile.png";
 import sendIcon from "../../assets/post/send.png";
-import PointModal from "../PointModal/pointModal";
 import { postComment } from "../../api/review";
 import { useParams } from "react-router-dom";
 
-const CommentBox = ({ comments }: CommentBoxProps) => {
+const CommentBox = ({ comments, setIsPost }: CommentBoxProps) => {
   const [commentContent, setCommentContent] = useState("");
-  const [isPost, setIsPost] = useState(false);
+  // const [isPost, setIsPost] = useState(false);
   const path = window.location.pathname;
   const isMine = path === "/mypost";
   const { reviewId } = useParams<{ reviewId?: string }>();
@@ -24,10 +23,11 @@ const CommentBox = ({ comments }: CommentBoxProps) => {
       alert("코멘트를 작성해주세요!");
     } else {
       try {
-        const review_id = Number(reviewId);
-        const res = await postComment({ review_id, commentContent });
-        console.log(res);
+        // const review_id = Number(reviewId);
+        // const res = await postComment({ review_id, commentContent });
+        // console.log(res);
         setIsPost(true);
+        localStorage.setItem("isPost", "true");
       } catch (err) {
         console.log(err);
         alert("예기치 못한 에러가 발생했습니다.");
@@ -37,12 +37,6 @@ const CommentBox = ({ comments }: CommentBoxProps) => {
 
   return (
     <>
-      {isPost && (
-        <div className="relative">
-          <div className="fixed z-10 bg-black w-[100%] h-[100vh] opacity-25 top-0"></div>
-          <PointModal />
-        </div>
-      )}
       <div className="bg-white pl-4 pr-4 pt-6 pb-5 rounded-bl-[24px] rounded-br-[24px] flex flex-col w-[100%]">
         <h2 className="font-bold text-mdTitle">코멘트</h2>
         {comments.map((c) => (
