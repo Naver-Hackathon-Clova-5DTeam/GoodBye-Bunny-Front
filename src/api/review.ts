@@ -38,3 +38,12 @@ export const postComment = async ({
     throw err;
   }
 };
+
+export const getMyReview = async () => {
+  try {
+    const res = await client.get("/review");
+    return res;
+  } catch (err) {
+    throw err;
+  }
+};

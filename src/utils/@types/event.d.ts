@@ -28,7 +28,7 @@ interface CommentBoxProps {
 
 interface CardType {
   nickname: string;
-  profile: string;
+  profile?: string;
   title: string;
   content: string;
   reviewId?: number;
