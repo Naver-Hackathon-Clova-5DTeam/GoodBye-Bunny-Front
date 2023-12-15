@@ -2,6 +2,7 @@ import { formatDate } from "../../utils/formatDate";
 import CommentBox from "./CommentBox";
 import editIcon from "../../assets/post/edit.png";
 import { useState, ChangeEvent, useEffect, useRef } from "react";
+import { patchReview } from "../../api/review";
 
 const PostBox = ({
   profile,
@@ -12,6 +13,7 @@ const PostBox = ({
   comments,
 }: CardType) => {
   const [newContent, setNewContent] = useState(content);
+  const [newTitle, setNewTitle] = useState(title);
   const [isEdit, setIsEdit] = useState(false);
   const [minHeight, setMinHeight] = useState("auto");
   const date = updateTime && formatDate({ updateTime });
@@ -29,10 +31,30 @@ const PostBox = ({
     setIsEdit(!isEdit);
   };
 
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewTitle(e.target.value);
+  };
+
   const handleTextareaInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     e.target.style.height = "auto";
     e.target.style.height = `${e.target.scrollHeight}px`;
     setNewContent(e.target.value);
+  };
+
+  const patchPost = async () => {
+    try {
+      const res = await patchReview({
+        title: newTitle,
+        content: newContent,
+      });
+      console.log(res);
+      alert("수정 완료되었습니다.");
+      setIsEdit(false);
+      // 변경 바로 반영되는지 확인
+    } catch (err) {
+      console.log(err);
+      alert("예기치 못한 에러가 발생했습니다.");
+    }
   };
 
   // 내가 작성한 회고는 로컬에서 프로필 가져오기
@@ -53,18 +75,33 @@ const PostBox = ({
         )}
       </div>
       <div className="flex flex-col bg-white pl-4 pr-4 pb-9 pt-4">
-        <h1 className="font-bold text-mdTitle mb-[14px]">{title}</h1>
         {isEdit ? (
-          <textarea
-            autoFocus
-            ref={textareaRef}
-            value={newContent}
-            className="font-regular text-fontGray"
-            onChange={handleTextareaInput}
-            style={{ height: "auto", resize: "none", minHeight: minHeight }}
-          />
+          <>
+            <input
+              className="font-bold text-mdTitle mb-[14px]"
+              value={newTitle}
+              onChange={handleInput}
+            />
+            <textarea
+              autoFocus
+              ref={textareaRef}
+              value={newContent}
+              className="font-regular text-fontGray"
+              onChange={handleTextareaInput}
+              style={{ height: "auto", resize: "none", minHeight: minHeight }}
+            />
+            <button
+              className="bg-black w-[5rem] rounded-[10px] text-white font-regular pt-1 pb-1 ml-auto mt-3"
+              onClick={patchPost}
+            >
+              수정 완료
+            </button>
+          </>
         ) : (
-          <p className="font-regular text-fontGray">{content}</p>
+          <>
+            <h1 className="font-bold text-mdTitle mb-[14px]">{title}</h1>
+            <p className="font-regular text-fontGray">{content}</p>
+          </>
         )}
       </div>
       <div className="w-[100%] h-[1px] bg-lightGray"></div>

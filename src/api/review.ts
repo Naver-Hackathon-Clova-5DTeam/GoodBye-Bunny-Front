@@ -17,3 +17,12 @@ export const getComment = async ({ review_id }: CommentPostType) => {
     throw err;
   }
 };
+
+export const patchReview = async ({ title, content }: ReviewType) => {
+  try {
+    const res = await client.patch(`/review`, { title, content });
+    return res;
+  } catch (err) {
+    throw err;
+  }
+};

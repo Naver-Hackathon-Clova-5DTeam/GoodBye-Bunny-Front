@@ -56,6 +56,7 @@ interface DateType {
 interface ReviewType {
   title: string;
   content: string;
+  review_id?: number;
 }
 
 interface CommentPostType {

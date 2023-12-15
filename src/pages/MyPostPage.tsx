@@ -11,7 +11,6 @@ const MyPostPage = () => {
     // 내 게시글 get 요청
     // 댓글 get 요청
     // 로컬에서 내 프로필 가져와 전달하기
-    // post 수정 요청
   }, []);
 
   return (
