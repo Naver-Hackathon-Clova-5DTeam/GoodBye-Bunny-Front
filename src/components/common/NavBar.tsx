@@ -1,6 +1,7 @@
 import homeIcon from "../../assets/common/home.png";
 import recommendIcon from "../../assets/common/recommend.png";
 import historyIcon from "../../assets/common/history.png";
+import storeIcon from "../../assets/common/store.png";
 import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
@@ -14,6 +15,13 @@ const NavBar = () => {
       >
         <img src={homeIcon} className="w-[22px] h-[22px]" />
         <p className="text-sm">홈</p>
+      </div>
+      <div
+        className="flex flex-col items-center cursor-pointer"
+        onClick={() => nav("/store")}
+      >
+        <img src={storeIcon} className="w-[22px] h-[22px]" />
+        <p className="text-sm">상점</p>
       </div>
       <div
         className="flex flex-col items-center cursor-pointer"
